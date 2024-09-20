@@ -1,0 +1,23 @@
+<h1>Welcome to the 'Post-ur-blog' site</h1>
+
+<table>
+    <tr>
+        <th> SL. No. </th>
+        <th> Title </th>
+        <th> Body </th>
+        <th> Action </th>
+    </tr>
+    <% @blog_posts.each do |blog_post| %>
+    <tr>
+        <td> <%=  blog_post.id %> </td>
+        <td> <%=  blog_post.title %> </td>
+        <td> <%=  blog_post.body %> </td>
+        <td> 
+            <%= link_to "See details (1)", blog_post %>
+            <%= link_to "See details (2)", "/blog-posts/#{blog_post.id}" %>
+            <%= link_to "See details (3)", blog_post_path(blog_post.id) %> 
+        </td>
+    </tr>
+    <% end %>
+
+</table>
